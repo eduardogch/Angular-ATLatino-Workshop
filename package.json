@@ -16,14 +16,14 @@
     "bdd": "node_modules/.bin/gulp bdd"
   },
   "devDependencies": {
-    "angular": "^1.6.1",
-    "angular-animate": "^1.6.1",
-    "angular-aria": "^1.6.1",
-    "angular-cookies": "^1.6.1",
+    "angular": "^1.6.0",
+    "angular-animate": "^1.6.0",
+    "angular-aria": "^1.6.0",
+    "angular-cookies": "^1.6.0",
     "angular-material": "^1.1.1",
-    "angular-messages": "^1.6.1",
-    "angular-resource": "^1.6.1",
-    "angular-route": "^1.6.1",
+    "angular-messages": "^1.6.0",
+    "angular-resource": "^1.6.0",
+    "angular-route": "^1.6.0",
     "angular-ui-router": "^0.4.0",
     "components-font-awesome": "^4.7.0",
     "gulp-chimp": "^2.1.0",
@@ -37,6 +37,7 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-read-json": "^1.1.0",
     "phantomjs-prebuilt": "^2.1.13",
+    "run-sequence": "^1.2.2",
     "scaffolding-angular": "^1.9.0"
   }
 }
