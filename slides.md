@@ -1,8 +1,9 @@
-%title: TDD & BDD with AngularJS - Latino/a Developers of Atlanta
-%author: Eduardo Gonzalez
-%date: 17-11-2016
+%title: Latino/a developer of Atlanta - Angular 1 & 2 Workshop
+%author: Eduardo Gonzalez y Roman Sanchez
+%date: 01-19-2017
 
--> TDD & BDD with AngularJS <-
+-> Angular 1 & 2 Workshop
+-> Lead by Eduardo Gonzalez and Roman Sanchez <-
 =========
 
 
@@ -17,12 +18,27 @@
 
 -> # Topics <-
 
-\# 1. Intro
-\# 2. AngularJS
-\# 3. TDD
-\# 4. BDD
-\# 5. Chimp.js
-\# 6. Sample project
+\# 1. *Sample project*
+\# 2. Intro
+\# 3. *AngularJS*
+\# 4. MVC (Model-View-Controller)
+\# 5. *Data Binding*
+\# 6. TDD (Test-driven Development)
+\# 7. *Questions*
+
+-------------------------------------------------
+
+-> # Sample project <-
+
+Here is the project -> https://github.com/eduardogch/Angular-ATLatino-Workshop
+
+Ensure *Git, Node.js and NPM* are installed prior to setup.
+
+In *terminal* run the following *commands*:
+
+\    git clone https://github.com/eduardogch/Angular-ATLatino-Workshop
+\    npm install
+\    npm start
 
 -------------------------------------------------
 
@@ -34,8 +50,6 @@ Please introduce yourself.
 \# Are you a *developer*?
     \- What are yours IT skills?
 \# Do you speak *Spanish*?
-\# Say *something interesting* about you?
-
 
 -------------------------------------------------
 
@@ -49,6 +63,37 @@ Please introduce yourself.
 \- Gulp, Bower, Express
 \- Karma, Jasmine, Mocha, Chai, PhantomJS
 \- Browserify, Commons.js, Watchify
+
+-------------------------------------------------
+
+-> # MVC - Model-View-Controller <-
+
+*Model-View-Controller* (MVC) is a design pattern who assigns three roles in an application.
+
+\- *Model*: It is *responsible* to get and maintaining *data*.
+\- *View*: It is *responsible* for *displaying* data to the *user*.
+\- *Controller*: It is *responsible* to controls the *interactions* between the *Model and View*.
+
+-------------------------------------------------
+
+-> # Data Binding <-
+
+*Data binding* in AngularJS is the *synchronization* between the *model* and the *view*.
+
+\   <html ng-app>
+\       <head>
+\           <script src='angular.js'></script>
+\           <script src='holaMundo.controller.js'></script>
+\       </head>
+\       <body ng-controller='UserController'>
+\           <div>Hi {{user.name}}</div>
+\       </body>
+\   </html>
+
+*Angular holaMundo.controller.js*
+\   function holaMundo($scope) {
+\     $scope.user = { name:'Eduardo' };
+\   }
 
 -------------------------------------------------
 
@@ -66,45 +111,9 @@ Please introduce yourself.
 
 -------------------------------------------------
 
--> # BDD <-
+-> # Questions <-
 
-*Behavior-driven Development* (BDD) is principally an idea about how software development should be managed by both *business* interests and *technical* insight.
-
-\    As a *<role>*
-\    I want *<feature>*
-\    so that *<business value>*
-
--------------------------------------------------
-
--> # Chimp.js <-
-
-[Chimp.js](https://github.com/xolvio/chimp/) makes it easy for developers to write automated/e2e tests for web applications with a technology stack for Selenium, WebDriverIO, Saucelabs, Mocha and Cucumber.
-
-[gulp-chimp](https://www.npmjs.com/package/gulp-chimp) is a wrapper to interact with Chimp.js in a gulp task.
-
--> *Stack Technologies* <-
-\- Mocha, Jasmine or Cucumber.js
-\- Selenium and WebdriverIO
-\- Chai or Jasmine assertion libraries inside your steps
-\- Built in Node.js, works for any web application (with special Meteor support)
-
--------------------------------------------------
-
--> # Sample project <-
-
-Here is the project -> https://github.com/eduardogch/Angular-ATLatino-Workshop
-
-[TDD and BDD with Angular](https://github.com/eduardogch/Angular-ATLatino-Workshop)
-
-\    git clone https://github.com/eduardogch/Angular-ATLatino-Workshop
-\    npm install
-\    gulp
-
--------------------------------------------------
-
--> # Last words <-
-
-I hope you like and find useful this presentation!!!
+I hope you like this presentation!!!
 
 ▛▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▜
 ▌  *Muchas Gracias!*  *Hay Preguntas?* ▐

@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     connect = require('gulp-connect'),
     chimp = require('gulp-chimp'),
+    scaffolding = require('scaffolding-angular'),
     karma = require('karma').Server;
 
 gulp.task('connect', function() {
@@ -62,6 +63,10 @@ gulp.task('tdd', function(done) {
             done();
         }
     });
+});
+
+gulp.task('scaffolding', function(done){
+    scaffolding.appStart();
 });
 
 gulp.task('default', ['connect', 'watch']);

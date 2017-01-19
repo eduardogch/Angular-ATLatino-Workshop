@@ -19,6 +19,9 @@ In the terminal run the following command
 - `gulp tdd` for run a TDD test.
 - `gulp bdd` for run a BDD test.
 
+## Angular Scaffolding files
+
+- `gulp scaffolding`
 
 ## TDD Report
 
