@@ -7,4 +7,4 @@ Feature: Use browser inside steps
   @watch, @focus
   Scenario: Visit Angular Testing App
     When  I visit "http://localhost:8080"
-    Then  I see the title of "Angular Material - Starter App fake"
+    Then  I see the title of "Angular Material - Starter App"

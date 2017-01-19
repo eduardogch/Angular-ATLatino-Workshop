@@ -37,3 +37,4 @@ jspm_packages
 .node_repl_history
 app/assets/js
 app/assets/styles
+e2e_output/

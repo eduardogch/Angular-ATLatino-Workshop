@@ -4,14 +4,10 @@ module.exports = function(config) {
         frameworks: ['jasmine'],
         files: [
             // Vendor files
-            'app/assets/vendor/angular/angular.js',
-            'app/assets/vendor/angular-ui-router/release/angular-ui-router.min.js',
-            'app/assets/vendor/angular-mocks/angular-mocks.js',
-            'app/assets/vendor/angular-animate/angular-animate.min.js',
-            'app/assets/vendor/angular-aria/angular-aria.min.js',
-            'app/assets/vendor/angular-cookies/angular-cookies.min.js',
-            'app/assets/vendor/angular-material/angular-material.min.js',
-            'app/assets/vendor/angular-messages/angular-messages.min.js',
+            'app/assets/js/angular.min.js',
+            'app/assets/js/angular-animate.min.js',
+            'app/assets/js/angular-aria.min.js',
+            'app/assets/js/angular-material.min.js',
             // Source files
             'app/src/app.module.js',
             'app/src/**/*.module.js',
