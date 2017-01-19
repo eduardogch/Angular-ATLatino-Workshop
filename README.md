@@ -23,6 +23,10 @@ In the terminal run the following command
 
 - `gulp scaffolding`
 
+## Markdown presentation tool
+
+- `mdp slides.md`
+
 ## TDD Report
 
 ![alt tag](https://github.com/eduardogch/Angular-ATLatino-Workshop/raw/master/istabul.png)

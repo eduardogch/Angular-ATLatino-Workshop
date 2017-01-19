@@ -35,7 +35,10 @@ Here is the project -> https://github.com/eduardogch/Angular-ATLatino-Workshop
 Ensure *Git, Node.js and NPM* are installed prior to setup.
 
 In *terminal* run the following *commands*:
+\    node -v
+\    npm -v
 
+In *terminal* run the following *commands*:
 \    git clone https://github.com/eduardogch/Angular-ATLatino-Workshop
 \    npm install
 \    npm start
@@ -73,6 +76,17 @@ Please introduce yourself.
 \- *Model*: It is *responsible* to get and maintaining *data*.
 \- *View*: It is *responsible* for *displaying* data to the *user*.
 \- *Controller*: It is *responsible* to controls the *interactions* between the *Model and View*.
+
+In the project lets go to *./app/src/users* and we can identify Angular MVC:
+
+\- *Model*: './app/src/users/user.service.js'
+\- *View*: './app/src/users/contactSheet.html'
+\- *Controller*: './app/src/users/user.controller.js'
+
+Extras in a common AngularJS 1 app:
+\- *Module*: Collection of services, directives, controllers, filters, and configuration.
+\- *Routes*: As a web application we need where to controls URL's
+\- *Filters*: Data format in the HTML.
 
 -------------------------------------------------
 
