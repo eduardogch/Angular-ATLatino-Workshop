@@ -5,54 +5,74 @@ var gulp = require('gulp'),
     scaffolding = require('scaffolding-angular'),
     karma = require('karma').Server;
 
-gulp.task('connect', function() {
-    connect.server({
-        root: 'app',
-        livereload: true
-    });
-});
-
-gulp.task('html', function() {
-    gulp.src('./app/**/*.html')
-        .pipe(connect.reload());
-});
-
-gulp.task('css', function() {
-    gulp.src('./app/src/**/*.css')
-        .pipe(connect.reload());
-});
-
-gulp.task('js', function() {
-    gulp.src('./app/src/**/*.js')
-        .pipe(connect.reload());
-});
-
-gulp.task('vendor-js', function () {
-    gulp.src([  'node_modules/angular/angular.js',
-                'node_modules/angular-material/angular-material.js',
-                'node_modules/angular-animate/angular-animate.js',
-                'node_modules/angular-aria/angular-aria.js',])
-        .pipe(gulp.dest('./app/assets/js/'));
-});
-
-gulp.task('vendor-css', function () {
-    gulp.src([  'node_modules/angular-material/angular-material.min.css',
-                './app/src/app.css'])
-        .pipe(gulp.dest('./app/assets/styles/'));
-});
-
-gulp.task('build', function (callback) {
+gulp.task('default', function() {
     runSequence(
-        'vendor-js',
-        'vendor-css',
-        callback
+        'build',
+        'connect',
+        'watch'
     );
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['./app/src/**/*.css'], ['css']);
-    gulp.watch(['./app/src/**/*.js',], ['js']);
-    gulp.watch(['./app/**/*.html'], ['html']);
+    gulp.watch(['./source/app/**/*.js'], ['source-js']);
+    gulp.watch(['./source/app/**/*.css', ], ['source-css']);
+    gulp.watch(['./source/app/**/*.html'], ['html']);
+});
+
+gulp.task('connect', function() {
+    connect.server({
+        root: 'public',
+        livereload: true
+    });
+});
+
+gulp.task('vendor-css', function() {
+    return gulp.src('./node_modules/angular-material/angular-material.min.css')
+        .pipe(gulp.dest('./public/assets/css'));
+});
+
+gulp.task('vendor-js', function() {
+    return gulp.src(['./node_modules/angular/angular.js',
+            './node_modules/angular-material/angular-material.js',
+            './node_modules/angular-animate/angular-animate.js',
+            './node_modules/angular-aria/angular-aria.js'
+        ])
+        .pipe(gulp.dest('./public/assets/js'));
+});
+
+gulp.task('images', function() {
+    return gulp.src('./source/svg/**/*')
+        .pipe(gulp.dest('./public/assets/svg/'));
+});
+
+gulp.task('html', function() {
+    gulp.src('./source/app/**/*.html')
+        .pipe(gulp.dest('./public/'))
+        .pipe(connect.reload());
+});
+
+gulp.task('source-css', function() {
+    gulp.src('./source/app/**/*.css')
+        .pipe(gulp.dest('./public/assets/css'))
+        .pipe(connect.reload());
+});
+
+gulp.task('source-js', function() {
+    gulp.src('./source/app/**/*.js')
+        .pipe(gulp.dest('./public/assets/js'))
+        .pipe(connect.reload());
+});
+
+gulp.task('build', function(callback) {
+    runSequence(
+        'vendor-css',
+        'vendor-js',
+        'images',
+        'html',
+        'source-css',
+        'source-js',
+        callback
+    );
 });
 
 gulp.task('bdd', ['connect'], function() {
@@ -88,8 +108,6 @@ gulp.task('tdd', function(done) {
     });
 });
 
-gulp.task('scaffolding', function(done){
+gulp.task('scaffolding', function(done) {
     scaffolding.appStart();
 });
-
-gulp.task('default', ['build', 'connect', 'watch']);

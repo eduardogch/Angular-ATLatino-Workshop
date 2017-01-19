@@ -23,6 +23,8 @@
     self.toggleList   = toggleUsersList;
     self.makeContact  = makeContact;
 
+    console.log("hola mundo 3");
+
     // Load all registered users
 
     userService
@@ -58,7 +60,7 @@
 
         $mdBottomSheet.show({
           controllerAs  : "vm",
-          templateUrl   : './src/users/contactSheet.html',
+          templateUrl   : './users/user.html',
           controller    : [ '$mdBottomSheet', ContactSheetController],
           parent        : angular.element(document.getElementById('content'))
         }).then(function(clickedItem) {

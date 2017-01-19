@@ -38,3 +38,4 @@ jspm_packages
 app/assets/js
 app/assets/styles
 e2e_output/
+public/

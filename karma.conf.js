@@ -3,30 +3,26 @@ module.exports = function(config) {
         basePath: '',
         frameworks: ['jasmine'],
         files: [
-            // Vendor files
-            'app/assets/js/angular.min.js',
-            'app/assets/js/angular-animate.min.js',
-            'app/assets/js/angular-aria.min.js',
-            'app/assets/js/angular-material.min.js',
-            // Source files
-            'app/src/app.module.js',
-            'app/src/**/*.module.js',
-            'app/src/**/*.js',
-            // Test files
-            'test/tdd/**/*.spec.js',
-            'test/tdd/spec-helper.js',
+            'public/assets/js/angular.js',
+            'public/assets/js/angular-animate.js',
+            'public/assets/js/angular-aria.js',
+            'public/assets/js/angular-material.js',
+            'public/assets/js/app.module.js',
+            'public/assets/js/**/*.module.js',
+            'public/assets/js/**/*.js',
+            'source/test/tdd/**/*.spec.js',
+            'source/test/tdd/spec-helper.js',
         ],
         exclude: [],
         preprocessors: {
-            'app/src/**/*.js': ['coverage']
+            'source/app/**/*.js': ['coverage']
         },
         reporters: ['mocha', 'coverage'],
         coverageReporter: {
             type: 'lcov',
-            dir: 'coverage',
-            subdir: 'PhantomJS'
+            dir: 'coverage'
         },
-        dest: __dirname + 'coverage/PhantomJS',
+        dest: __dirname + 'coverage',
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
